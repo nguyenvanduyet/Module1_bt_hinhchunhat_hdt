@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myRectangle" width="300" height="100" style="border: 1px red"></canvas>
+<script>
+    function Rectangle(x,y,a,b){
+        this.Cd=a;
+        this.Cr=b;
+        this.X=x;
+        this.Y=y;
+        this.Dientich=function (){
+            return a*b;
+        }
+        this.Chuvi=function (){
+            return (a+b)*2
+        }
+        this.Draw=function (){
+            let canvas=document.getElementById("myRectangle");
+            let hcn=canvas.getContext("2d");
+            hcn.fillStyle="red";
+            hcn.fillRect(this.X,this.Y,this.Cd,this.Cr)
+        }
+
+
+
+    }
+    let myRectangle= new Rectangle(0,0,200,50);
+    myRectangle.Dientich();
+    myRectangle.Chuvi();
+    myRectangle.Draw();
+    alert("dientich:"+ myRectangle.Dientich() +"chu vi"+ myRectangle.Chuvi());
+
+</script>
+</body>
+</html>
